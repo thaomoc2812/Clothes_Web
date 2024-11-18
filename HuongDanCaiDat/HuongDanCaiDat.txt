@@ -1,0 +1,18 @@
+Hướng dẫn cài đặt
+1.	Tạo CSDL
+-	Chạy mySQL trên Xampp
+-	Sử dụng file warehouse.sql để tạo csdl
+2.	Chạy mã nguồn trên Visual Studio Code
+-	Dùng Visual Studio Code để mở folder
+-	Mở terminal trong folder, gõ: php -S localhost:8888
+-	Có thể thay 8888 bằng port khác
+3.	Tài khoản:
+-	Admin:
+TK: admin
+MK: admin123
+-	Nhân viên:
+TK: 0969068710
+MK: nhanvien
+-	Khách hàng:
+TK:0111111111
+MK: khach01

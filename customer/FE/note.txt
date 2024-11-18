@@ -1,0 +1,28 @@
+ <?php 
+                                $now = date('Y-m-d');
+                                $search_ttkm = "SELECT * FROM thongtinkhuyenmai WHERE ngaybatdau <= $now AND ngayketthuc >= $now";
+                                $check_km = 0;
+                                while($result_ttkm = mysqli_query($conn, $search_ttkm))
+                                {
+                                    $fetch_ttkm = mysqli_fetch_assoc($result_ttkm);
+                                        $search_km = "SELECT * FROM khuyenmai WHERE nmasanpham = $masanpham";
+                                        if($result_km = mysqli_query($conn, $search_km))
+                                        {
+                                            $check_km = 1;
+                                            $fetch_km = mysqli_fetch_assoc($result_km);
+                                            $giathat = $fetch_gia['giabanra'] *(100-$fetch_ttkm['giam'])/100;
+                                            ?>
+                                            <small class="text-muted">Giá cũ: <s><span><?php echo number_format( $fetch_gia['giabanra'], 0, '.', '.')?></span></s></small>
+                                            <h4 class="price">Giá: <span><?php echo number_format( $giathat, 0, '.', '.')?></span></h4>
+                                        <?php
+                                            
+                                        }
+                                        
+                                    
+                                }
+                                if($check_km == 0){?>
+
+                                    <h4 class="price">Giá: <span><?php echo number_format( $fetch_gia['giabanra'], 0, '.', '.')?></span></h4>
+                                <?php
+                                }
+                                ?>

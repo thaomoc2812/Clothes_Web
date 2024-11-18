@@ -1,0 +1,154 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name ="viewport" content="width= device-width,initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/1147679ae7.js" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+
+
+      <script src="../../../js/script_admin.js"></script>
+      <link rel="stylesheet" href="../../../css/dashMain.css">
+      <link rel="stylesheet" href="../../../css/style2.css">
+      <link rel="stylesheet" href="../../../css/entypo.css">
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+    </head>
+
+    <body class="page-body  page-fade" onload="collapseSidebar()">
+
+      <div class="page-container sidebar-collapsed" id="navbarcollapse" >
+  
+  
+          <div class="sidebar-menu">
+            
+              <header class="logo-env">
+  
+                  <!-- logo -->
+  
+  
+                  <!-- logo collapse icon -->
+                  <div class="sidebar-collapse" onclick="collapseSidebar()">
+                      <a href="#" class="sidebar-collapse-icon with-animation"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+                          <i class="entypo-menu"></i>
+                      </a>
+                  </div>
+              </header>
+              
+              <ul id="main-menu" class="" >
+                
+                  <li id="dash"><a href="../../home.php"><i class="entypo-gauge" ></i><span>Home</span></a></li>
+  
+                  <li class="" id="staffhassubopen"><a href="#" onclick="memberExpand(1)"><i class="entypo-users"></i><span>Quản lý nhân viên</span></a>
+                    <ul id="staffExpand">
+                        <li><a href="../quanLyNhanVien/createTaiKhoanNhanVien.php"><span>Tạo tài khoản nhân viên</span></a></li>
+                        <li><a href="../quanLyNhanVien/addNhanVien.php"><span>Thêm nhân viên</span></a></li>
+                        <li><a href="../quanLyNhanVien/viewNhanVien.php"><span>Xem danh sách nhân viên</span></a></li>
+                        <li><a href="../quanLyNhanVien/searchNhanVienFirst.php"><span>Tìm kiếm nhân viên</span></a></li>
+                        <li><a href="../quanLyNhanVien/quanLyPhanQuyen.php"><span>Quản lý phân quyền</span></a></li>
+                        <li><a href="../quanLyNhanVien/quanLyLichLamViec.php"><span>Quản lý lịch làm việc</span></a></li>
+                        <li><a href="../quanLyNhanVien/viewLuong.php"><span>Quản lý lương</span></a></li>
+                        <li><a href="../quanLyNhanVien/viewDanhGia.php"><span>Đánh giá</span></a></li>
+                    </ul>
+                  </li>
+          
+          
+                  <li class="" id="roomhassubopen"><a href="#" onclick="memberExpand(2)"><i class="entypo-quote"></i><span>Quản lý kho hàng</span></a>
+          
+                    <ul id="roomExpand">
+                      <li><a href="../quanLyKhoHang/phanLoaiSanPham.php"><span>Phân loại sản phẩm</span></a></li>
+                      <li><a href="../quanLyKhoHang/quanLyDanhMuc.php"><span>Quản lý danh mục</span></a></li>
+                      <li><a href="../quanLyKhoHang/quanLyNhaCungCap.php"><span>Quản lý nhà cung cấp</span></a></li>
+                      <li><a href="../quanLyKhoHang/quanLyLoHang.php"><span>Quản lý lô hàng</span></a></li>
+                      <li><a href="../quanLyKhoHang/addSanPham.php"><span>Thêm sản phẩm</span></a></li>
+                      <li><a href="../quanLyKhoHang/viewSanPham.php"><span>Xem danh sách sản phẩm</span></a></li>
+                      <li><a href="../quanLyKhoHang/searchSanPhamFirst.php"><span>Tìm kiếm sản phẩm</span></a></li>
+                      <li><a href="../quanLyKhoHang/quanLySoLuongTonKho.php"><span>Quản lý số lượng tồn kho</span></a></li>
+                      <li><a href="../quanLyKhoHang/quanLyKhuyenMai.php"><span>Quản lý khuyến mại</span></a></li>
+                      <li><a href="../quanLyKhoHang/quanLyDanhGia.php"><span>Quản lý đánh giá</span></a></li>
+          
+                    </ul>
+          
+                  <li class="" id="devicehassubopen"><a href="#" onclick="memberExpand(3)"><i class="entypo-box"></i><span>Quản lý khách hàng</span></a>
+          
+                    <ul id="deviceExpand">
+                      <li>
+                        <a href="../quanLyKhachHang/viewKhachHangOnline.php"><span>Danh sách khách hàng</span></a>
+                      </li>
+                   
+                      <li>
+                        <a href="../quanLyKhachHang/viewTaiKhoanDangHoatDong.php"><span>Tài khoản khách hàng</span></a>
+                      </li>
+          
+                    </ul>
+          
+                    <li class="" id="packagehassubopen"><a href="#" onclick="memberExpand(4)"><i class="entypo-alert"></i><span>Quản lý đơn hàng</span></a>
+
+                      <ul id="packageExpand">
+                      <li>
+                          <a href="../quanLyDonHang/taoHoaDon.php"><span>Tạo hóa đơn</span></a>
+                        </li>
+                        <li>
+                          <a href="../quanLyDonHang/offline.php"><span>Đơn hàng tại cửa hàng</span></a>
+                        </li>
+                        <li>
+                          <a href="../quanLyDonHang/choXacNhan.php"><span>Chờ xác nhận</span></a>
+                        </li>
+            
+                        <li>
+                          <a href="../quanLyDonHang/dangChuanBi.php"><span>Đang chuẩn bị</span></a>
+                        </li>
+                        <li>
+                          <a href="../quanLyDonHang/daSoanDon.php"><span>Đã soạn đơn</span></a>
+                        </li>
+            
+                        <li>
+                          <a href="../quanLyDonHang/dangVanChuyen.php"><span>Đang vận chuyển</span></a>
+                        </li>
+                        <li>
+                          <a href="../quanLyDonHang/giaoThanhCong.php"><span>Giao thành công</span></a>
+                        </li>
+                        <li>
+                          <a href="../quanLyDonHang/daHuy.php"><span>Đã hủy</span></a>
+                        </li>
+            
+                      </ul>
+            
+                    </li>
+          
+                  <li class="" id="memberhassubopen"><a href="#" onclick="memberExpand(5)"><i class="entypo-star"></i><span>Quản lý doanh thu</span></a>
+          
+                    <ul id="memExpand">
+                      <li >
+                        <a href="theoThoiGian.php"><span>Theo thời gian</span></a>
+                      </li>
+          
+                      <li>
+                        <a href="theoSanPham.php"><span>Theo sản phẩm</span></a>
+                      </li>
+          
+                      <li>
+                        <a href="theoKhachHang.php"><span>Theo khách hàng</span></a>
+                      </li>
+          
+                    </ul>
+          
+                  </li>
+          
+                 
+                  <li><a href="../../../html/dangNhap.php"><i class="entypo-logout"></i><span>Đăng xuất</span></a></li>
+                 
+                </ul>
+                
+          </div>
+          
